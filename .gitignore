@@ -1,1 +1,16 @@
+# IntelliJ
+.idea/
+*.iml
 
+# Maven
+target/
+
+# Node
+node_modules/
+
+# Build
+build/
+dist/
+
+# Logs
+*.log

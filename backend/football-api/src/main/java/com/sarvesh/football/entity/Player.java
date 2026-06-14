@@ -3,16 +3,14 @@ package com.sarvesh.football.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.List;
-
 @Entity
-@Table(name = "teams")
+@Table(name = "players")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Team {
+public class Player {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,12 +18,11 @@ public class Team {
 
     private String name;
 
-    private String manager;
+    private String position;
 
-    private Integer fifaRanking;
+    private Integer jerseyNumber;
 
-    private String flagUrl;
-
-    @OneToMany(mappedBy = "team")
-    private List<Player> players;
+    @ManyToOne
+    @JoinColumn(name = "team_id")
+    private Team team;
 }
